@@ -1,0 +1,18 @@
+
+git init: 로컬 저장소 생성
+git config - -global user.name “abc”
+git config - -global user.email “abc”
+git config - -list
+
+
+-branch 만들기( main과 dev의 공간은 서로 다름. dev는 main에 있는것을 복사해서 만든것. dev에서 내용 수정 후 커밋하고 메인으로 넘어가면 메인에서의 변화는 X)
+git branch dev: 브랜치 생성
+git switch dev: 브랜치로 이동
+git switch -: 직전에 있던 브랜치로 이동
+git switch -c dev : dev생성하고 dev로 이동
+git diff: 변경된 내용 간략히 확인 가능
+git merge 합치고자 하는 브랜치: 합치기
+(충돌: 대쉬에서 텍스트에디터로 넘어온 화면이 뜰 수 있음 —> ;wq 해결)
+
+- git hub 연동
+git push -u origin main
