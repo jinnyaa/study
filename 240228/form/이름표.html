@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이름표 label</title>
+</head>
+<body>
+  <h1>이름표 label</h1>
+  <ul>
+    <li>인라인</li>
+    <li>폼과 관련된 요소에 이름표 지정</li>
+    <li>label 요소를 정의함으로써 폼 요소와 연관시킬 수 있음</li>
+    <li>키보드를 통해 컨트롤이 가능하며 접근성 향상</li>
+    <li>&lt;input id="one"&gt;의 아이디 값과 &lt;label for="one"&gt;의 값이 동일하게 연결 됨</li>
+  </ul>
+
+  <form>
+    <section>
+    <fieldset>
+      <legend>연결 방법1</legend>
+      이름: <input type="text" name="username" id="user_name" >
+    </fieldset>
+    </section>
+    
+
+    <section>
+      <h2>연결 방법 2</h2>
+      <table border="1">
+        <tr>
+          <td><input type="radio" name="fruits" value="딸기" id="strawberry"></td>
+          <th><label for="strawberry">딸기</label></th>
+        </tr>
+<!-- label for="@" @값을 클릭해고 radio 선택됨  -->
+        <tr>
+          <td><input type="radio" name="fruits" value="토마토" id="tomato"></td>
+          <th><label for="토마토">토마토</label></th>
+        </tr>
+
+      </table>
+    </section>
+  </form>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>다양한폼관련태그</title>
+</head>
+<body>
+  <h1>다양한 폼 관련 태그</h1>
+  <h2>input 태그</h2>
+  <p>인라인 요소로 폼 안의 기본적인 필드 값을 만들 때 사용. 빈요소</p>
+
+  <form>
+    <!-- 
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+
+      input은 type 속성 값에 따라 역할이 달라짐
+        name="데이터 이름"
+        maxlength="value의 최대 수(문자수)"
+        minlength="value의 최소 수(문자수)"
+        placeholder="컨트롤 박스 안의 힌트 값"
+        required="필수항목. 단, form 태그가 반드시 정의되어있어야 함" -> 미 작성시 "작성하세요"
+        value="입력값, 출력값, 전송값"
+        autofocus="자동 포커스"
+        checked="체크박스 자동 선택"
+        selected="select옵션 자동 선택"
+        disabled="비활성화"
+       
+     -->
+
+     <section>
+      <h3>type="text"/type="passwaord"</h3>
+      사용자명: <input type="text" name="username" id="user_name" maxlength="10" placeholder="이름을 입력하세요"><br>
+      비밀번호: <input type="password" name="userPassword" id="user_password" minlength="4" required>
+      <br>
+
+      <input type="submit" value="확인">
+      <input type="reset" value="취소">
+      <input type="button" value="버튼">
+     </section>
+     <hr>
+
+     <section>
+      <h3>여러 줄의 텍스트 박스</h3>
+      <textarea name="texBox" id="tecBox" cols="30" rows="10" placeholder="텍스트 박스">인라인. 이 안에 글 작성시 박스안에 출력 placeholder와 다름
+      </textarea>
+     </section>
+    <hr>
+
+     <section>
+      <h3>라디오 버튼</h3>
+      <p>하나의 값만 선택 가능.<strong>name 속성은 반드시 같아야 함</strong></p>
+      <input type="radio" name="choice" value="재현">재현
+      <input type="radio" name="choice" value="마크">마크
+      <input type="radio" name="choice" value="정우">정우
+      <input type="radio" name="choice" value="도영">도영
+      <!-- 라디오 값의 목적은 하나만 선택하도록 하는것, 따라서 name의 값은 동일하게 줘야함. 네임값을 다르게 줬을때 중복선택됨 -->
+     </section>
+     <hr>
+
+     <section>
+      <h3>체크박스 버튼</h3>
+      <p>여러 개의 값 선택 가능. <strong>name의 속성은 반드시 같아야 함</strong></p>
+      <input type="checkbox" name="decide" value="NCT" checked>NCT
+      <input type="checkbox" name="decide" value="라이즈">라이즈
+      <input type="checkbox" name="decide" value="에이티즈">에이티즈
+      <input type="checkbox" name="decide" value="더보이즈">더보이즈
+      <!-- "checked" 미리 체크가 되어있음 -->
+     </section>
+     <hr>
+
+     <section>
+      <h3>드롭다운 형태의 메뉴</h3>
+      <select name="menu" id="menu">
+      <!-- 반드시 하나의 option이 있어야 함 -->
+      <option value="">이곳에서 선택해 주세요</option>
+      <!-- label 옵션 그룹을 사용하는 경우 label 이름 필수 -->
+      <optgroup label="그룹1">
+        <option value="아이스크림">아이스크림</option>
+        <option value="푸딩" selected>푸딩</option>
+        <option value="약과">약과</option>
+      </optgroup>
+      <optgroup label="그룹2">
+        <option value="아아">아이스아메리카노</option>
+        <option value="아라">아이스카페라떼</option>
+        <option value="아바라">아이스바닐라라떼</option>
+        <!-- selected: 하나의 값에만 보이며, 메뉴에서 미리 보여지며 선택됨 -->
+      </optgroup>
+      </select>
+     </section>
+     <hr>
+
+     <section>
+      <h3>파일 첨부 버튼</h3>
+      <input type="file" name="userfile">
+      <!-- accept="특정 확장자만 첨부" -->
+      <input type="file" name="file" accept=".jpg, .png, .pdf, .xlsz"><br>
+      <button type="submit">전송</button>
+      <button type="reset">취소</button>
+     </section>
+     <hr>
+
+     <section>
+      <h3>날짜</h3>
+      <input type="date" name="yymmdd">
+      <hr>
+      <h3>이메일</h3>
+      <input type="email" name="useremail">
+      <hr>
+      <h3>url</h3>
+      <input type="url" name="userurl">
+      <hr>
+      <h3>검색</h3>
+      <input type="search" name="usersearch">
+      <hr>
+      <h3>범위</h3>
+      <input type="range" name="userrange">
+      <hr>
+      <h3>숫자</h3>
+      <input type="number" name="usernumber">
+      <hr>
+      <h3>전화</h3>
+      <input type="tel" name="usertel">
+     </section>
+
+
+  </from>
+
+</body>
+</html>
