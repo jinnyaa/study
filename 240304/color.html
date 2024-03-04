@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>color</title>
+  <!-- 내부선언 -->
+  <style>
+  h1{color: aqua;/*color name*/}
+  h2{color: darkorange;/*hex R(61)G(96)B(A6) 6자리 기본*/}
+  li{color: rgba(246, 153, 92, 0.5)}
+  p{color:hotpink /* hsla(색상, 채도%, 명도%, 불투명도)*/}
+
+  #paragraph {/*아이디 선택자: 하나의 html 문서 안에서 고유한 이름을 가지며 다른 id에 같은 이름을 쓸 수 없음*/
+  color: green}
+
+  /* css 상속 inheritance: 해당 선택자의 자식, 자손까지 같은 특성이 적용되는 것. 주로 서체와 관련된 속성들이 상속되는 경우가 많음 
+  
+  선택자는 우선 순위가 있음
+  부모 및 조상의 상속 값은 본인(자식)의 적용 값보다 우선하지 않음
+  즉, 직접 적용값 우선
+  같은 특성 적용시 선택자의 우선 순위가 높은 선택자 특성이 적용
+  타입 선택자보다 아이디 선택자가 우선 적용됨*/
+  
+  </style>
+</head>
+<body>
+  <h1>글자 색상</h1>
+  <h2>한글 입숨</h2>
+  <ul>
+    <li> color 특성은?</li>
+    <li> color name: orange</li>
+    <li> hex: #FF5F00</li>
+    <li> rgb: rgb(0,55,150)</li>
+    <li> rgba(red,green,blue,alpha): rgba(50,100,250,0.7) 마지막 자리수는 불투명도 0~1 사이의 값을 가짐</li>
+  </ul>
+
+  <p id="paragraph">여자의 근로는 특별한 보호를 받으며, 고용·임금 및 근로조건에 있어서 부당한 차별을 받지 아니한다. 국회는 선전포고, 국군의 외국에의 파견 또는 외국군대의 대한민국 영역안에서의 주류에 대한 동의권을 가진다.국회의 회의는 공개한다.</p>
+  <p class="paragraph">다만, 출석의원 과반수의 찬성이 있거나 의장이 국가의 안전보장을 위하여 필요하다고 인정할 때에는 공개하지 아니할 수 있다.</p>
+</body>
+</html>

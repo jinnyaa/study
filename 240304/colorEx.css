@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+body {background-color: rgb(241, 199, 199);}
+#text1{color: blueviolet; background-color: blanchedalmond;}
+#text2{color: rgb(226, 153, 43);background-color: blanchedalmond;}
+#text3{color: rgb(43, 92, 226);background-color: blanchedalmond;}
+#text4{color: rgb(95, 226, 43);background-color: blanchedalmond;}
