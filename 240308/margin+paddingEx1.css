@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+body{
+  font-family: '나눔고딕','맑은 고딕','돋움',sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+.title {
+  background-color: rgb(1, 6, 83);
+  color: aliceblue;
+  border-bottom: 6px solid #a7d4ff;
+  border-radius:20px 20px 0px 0px;
+  padding: 10px 10px;
+  width: 500px;
+  width: 60%; /*전체 페이지의 60%만 차지*/
+  min-width: 400px; /*창을 줄였을때 최소 가로값이 400px은 유지시키겠다*/
+  margin: 0 auto; /*h1의 여백은 0이되었고, 나머지 여백은 body영역의 여백임*/
+}
+
+h2{
+  text-decoration: line-through;
+  font-size: 22px;
+}
+
+.list li{
+  border: 1px solid #222;
+  width: 300px;
+  padding: 4px;
+  margin: 0 auto 4px;  /* -->margin-bottom: 4px; */
+  text-align: left;
+}
+
+.url{
+  background-color: rgb(1,6,83);
+  width: 60%;
+  min-width: 300; /*300px이하로는 작아지지 않음,최소 크기 300유지*/
+  padding: 10px;
+  margin: 0 auto 1px;
+  
+}
+
+.url a{
+  color: #fff;
+  text-decoration-line: none;
+}
+.url:hover{
+  background-color: aqua;
+}
+.wrapper .site {
+  background-color: bisque;
+  border-bottom: 1px solid #a7d4ff;
+  height: 40px;
+  line-height: 40px;
+  /* "한 줄의 경우" 세로 중앙 정렬 방법 height 와 line-height의 값을 동일하게 적용/ 폰트 사이즈의 크기가 큰 경우는 잘 안됨 */
+}
