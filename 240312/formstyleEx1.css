@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+form{
+  background-color: #ddd;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  max-width: 500px; /*최대 500이상으로는 커지지 않음*/
+  min-width: 300px; /*최대 300이상으로는 커지지 않음*/
+  margin: 30px auto;
+  overflow: hidden;
+  /*마진상쇄현상: 일반적인 흐름에서, 자식의 margin top이 만나면 둘 중 큰 값이 부모에게 적용
+    해결방법 -> 부모 요소에 oveflow:hidden*/
+}
+
+form fieldset{
+border: 3px rgb(68, 131, 250) solid;
+border-radius: 10px;
+width: 70%; 
+margin: 50px auto;
+text-align: right;
+padding: 4%;
+}
+
+form legend{
+  text-align: left;
+  background-color:rgb(68, 131, 250);
+  color: rgb(255, 255, 255);
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+form fieldset input{
+  width: 70%;
+  padding: 5px;
+  border:2px solid transparent;
+  border-bottom: 2px solid rgb(68, 131, 250);
+  margin-bottom: 10px;
+  outline: none;
+
+  font-family: inherit;
+}
+
+/* 
+텍스트 필드: 마우스 이벤트
+  ㄴ 기본일때는 border-bottom만 있고
+  ㄴ 마우스를 올렸을 때는 border전부가 있고
+  ㄴ 클릭했을 때는 배경색
+버튼: 마우스 이벤트
+*/
+/* 속성(특성)선택자: 요소[속성],요소[속성=값][속성] */
+form fieldset input[type]:hover{
+  border: 2px solid blue;
+}
+
+form fieldset input[name=userName]:focus{ /* :focus 포커스가 잡혔을 때 */
+  background-color: antiquewhite;
+  border: 2px solid transparent;
+}
+
+form fieldset [required]:focus{
+  background-color: aquamarine;
+  border: 2px solid transparent;
+}
+
+form button{
+  background-color: rgb(77, 77, 255);
+  color: #eee;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 4px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover{
+  background-color: black;
+}
