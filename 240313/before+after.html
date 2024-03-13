@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>before+after</title>
+  <style>
+    p{
+      border: 1px solid #000;
+    }
+    p::before{
+      content: "설명 :";/*생략 불가능.""을 비워둘 순 있음*/
+      background-color: antiquewhite;
+      padding: 4px;
+    }
+    p::after{
+      content: "";
+      background-color: antiquewhite;
+    }
+    .box1::before{
+      content: "www.google.com주소 : ";
+    }
+    .box2::before{
+      content: "www.naver.com주소 : ";
+      background-color: antiquewhite;
+      margin-right: 20px;
+      padding-right: 20px;
+    }
+    .box3::before{
+      content: "www.kakao.com주소 : ";
+      display: block;
+      background-color: antiquewhite;
+      border-right: 10px solid orange;
+      width: 50%;
+    }
+    .box4::after{
+      content: "";
+      display: inline-block;
+      width: 10px; height: 15px;
+      background-color: aqua;
+    }
+  
+    .box5::after{
+      content: "💘";
+    }
+    .box6::after{
+      content: "&lt"; /*값으로 작성되는 부분""은 텍스트 컨텐츠의 영역으로 코드값 적용X */
+    }
+   
+  </style>
+</head>
+
+<body>
+  <h2>:before, ::before</h2>
+  <p>기준 요소 안의 컨텐츠 영역 앞쪽에 적용. 의사 요소</p>
+  <ol>
+    <li class="box1">구글</li>
+    <li class="box2">네이버</li>
+    <li class="box3">카카오</li>
+  </ol>
+
+  <h2>:after, ::after</h2>
+  <p>기준 요소 안의 컨텐츠 영역 뒤쪽에 적용.</p>
+  <ol>
+    <li class="box4">구글</li>
+    <li class="box5">네이버</li>
+    <li class="box6">카카오</li>
+  </ol>
+</body>
+</html>
