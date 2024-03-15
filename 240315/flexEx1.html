@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>flexEx1</title>
+  <style>
+    body{
+      margin:0; 
+    }
+    .wrapper {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    background-color: aliceblue;
+    /* 주축기준정렬 */
+    justify-content: center;
+    /* 교차축기준정렬 */
+    align-items: center;
+    }
+ 
+  </style>
+</head>
+
+<body>
+  <div class="wrapper" id="container"><!-- flex-container -->
+    <div class="text1"><a href="#">텍스트</a></div><!-- flex-item -->
+    <div class="text2"><a href="#">텍스트</a></div><!-- flex-item -->
+</body>
+</html>
