@@ -4,19 +4,63 @@
   <meta charset="utf-8">
   <title>forrmstyleEx.html</title>
   <style>
-    body{
-      width: 300px;
-      height: 300px;
-      margin: 100px auto;
-      background-color: antiquewhite;
+   
+    form{
+        width: 500px; height: 250px;
+        background-color: #ddd;
+        margin: 50px auto;
+        padding-top: 50px;
     }
-
     fieldset{
       background-color: #fff;
+      border-radius: 10px;
+      border-color: rgb(81, 106, 252);
+      width: 300px; height: 150px;
+      margin:0 auto;
+     
     }
     legend{
       border-style: none;
+      border-radius: 10px;
+      border: 4px solid rgb(81, 106, 252);
+      background-color: rgb(81, 106, 252);
+      color: #fff;
     }
+   
+    section.text{
+        text-align: right;
+        margin: 20px 20px 0;
+    }
+
+    label{
+        color: rgb(81, 106, 252);
+        line-height: 1.6;
+        letter-spacing: normal;
+        text-align: right;
+        margin: 0 23px;
+    }
+    
+    input{
+        border-style: none;
+        width: 150px;
+        border-bottom: 2px solid rgb(81, 106, 252);
+    }
+    input:hover{
+        background-color: rgb(197, 226, 255);
+        color: #0400ff;
+    }
+    button{
+        background-color: rgb(81, 106, 252);
+        color: #fff;
+        border-style: none;
+        border-radius: 5px;
+    }
+    section.button{
+        text-align: right;
+        padding: 0 40px 0;
+    }
+   
+    
   </style>
 </head>
 
@@ -24,11 +68,15 @@
   <form>
   <fieldset>
   <legend>회원가입</legend>
-  <label>이름 : <input type="text" name="userName" required autofocus></label><br>
-  <label>이메일: <input type="email" name="userEmail" required></label>
+  <section class="text">
+  <label>이름 :<input type="text" name="userName" required autofocus></label><br>
+  <label>이메일 :<input type="email" name="userEmail" required></label>
+  </section>
   <br>
+  <section class="button">
   <button type="submit">가입</button>
   <button type="reset">취소</button>
+  </section>
   </fieldset>
   </form>
 </body>
