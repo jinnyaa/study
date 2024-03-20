@@ -1,23 +1,76 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <title>flexEx6</title>
+  <meta charset="UTF-8">
+  <title>flexex6</title>
   <style>
-    header{
-      display: flex;
-      flex-direction: row;
+    body {
+      margin: 0;
+      text-align: center;
     }
-    
+    header {
+      display: flex;
+      background-color: #E8DFCA;
+    }
+    header h1 {
+      background-color: #AEBDCA;
+      margin: 0;
+      font-size: 2rem;
+      /* width: 10vw;  */
+      width: 5rem; height: 4rem;
+      /* aspect-ratio: 2 / 1; */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    header form {
+      /* background-color: #E8DFCA; */
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+
+      /* width: calc(100% - 7rem - 5rem); */
+    }
+    /* header form * { form 하위 요소 각 각에 적용 */
+    header form [type] {
+      outline: none;
+      font-size: 1rem;
+      font-family: '나눔고딕', '맑은 고딕', 돋움, sans-serif;
+      border: 1px solid #000;
+      height: 40px;
+      padding: 0 10px;
+    }  
+    header form button[type=submit] {
+      border-left: none;
+      width: 80px;
+      cursor: pointer;
+    }
+    header form button[type=submit]:hover {
+      background-color: #594545;
+      color: #fff;
+    }
+    header nav {
+      background-color: #7895B2;
+      width: 5rem;
+      font-size: 1.5rem;
+      margin-left: auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">Logo</div>
-    <input type="text" id="검색" name="검색">
-    <button type="button" >검색</button>
-    <div class="menu"><a href="#" target="_blank">메뉴</a></div>
+  <header><!-- flex-container -->
+    <h1>로고</h1><!-- flex-item -->
+    <form><!-- flex-item -->
+      <input type="search"  placeholder="검색어를 입력하세요" autofocus>
+      <button type="submit">검색</button>
+    </form>
+    <nav>메뉴</nav><!-- flex-item -->
   </header>
 </body>
 </html>
