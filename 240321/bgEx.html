@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>bgEx</title>
+    <style>
+   form{
+    border: 3px solid #6b6b6b;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+    min-width: 400px;
+    max-width: 600px;
+   }
+   form input{
+    outline: none;
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    /* padding: 10px 10px 10px 50px;
+    box-sizing: border-box; */
+    padding: 10px; 
+    text-indent: 30px; /*들여쓰기. 레이아웃에 영향을 주고 싶지 않을때 주로 사용*/
+    font-size: 0.8rem;
+
+
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 10px 50%;
+   }
+   form input::placeholder{
+    color: rgb(142, 142, 255);
+   }
+   form input:hover, form input:focus{
+    background-color: aliceblue;
+    color: rgb(183, 183, 255);
+   }
+   form input[type="text"]{
+    background-image: url(images/user-solid.svg);
+   }
+   [name=useremail]{
+    background-image: url(images/envelope-solid.svg);
+   }
+   [name=usertel]{
+    background-image: url(images/phone-volume-solid.svg);
+   }
+       
+    </style>
+</head>
+<body>
+    <form>      
+        <input type="text" placeholder="이름을 입력하세요" class="name" name="username" autofocus>
+        <input type="email" placeholder="이메일을 입력하세요"  class="mail" name="useremail">
+        <input type="tel" placeholder="연락처를 입력하세요" class="number" name="usertel">
+    </form>
+</body>
+</html>
