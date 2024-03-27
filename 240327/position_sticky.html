@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>position_sticky</title>
+    <style>
+        html{
+            height: 300vh;
+        }
+        body{
+            line-height: 1.5;
+        }
+        h1{
+            background-color: aquamarine;
+            padding: 10px 20px;
+            margin-top: 200px;
+
+            position: sticky;
+            top: 0; /*고정할 곳의 위치*/
+            /*
+            해당 요소가 위치 특정 값이 지정한 곳에 도달하면 고정 위치의 포지션으로 성격이 바뀜
+            1. 부모요소들 중 하나라도 overflow:hidden이 적용되어 있으면 동작하지 않음
+            2. height 값이 %로 설정된 경우 동작하지 않음
+            3. top, right, left, bottom 중 반드시 하나만 작성되어야 하며 작성하지 않으면 relative와 동일한 성격을 지님
+            */
+        }
+        p{
+            width: 400px;
+            text-align: justify;
+            font-size: 1.1rem;
+        }
+        p:nth-last-child(1){
+            height: 200vh;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>position_sticky</h1>
+    <h2>사용자 스크롤 기준 포지션</h2>
+    <h3>상대 위치처럼 움직이지만 지정된 위치 값에 도달하면 고정 위치 성격을 가짐</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, praesentium quidem consequuntur reprehenderit eum atque quos soluta laborum ea non accusantium facere accusamus aut nam dignissimos vitae maiores, nisi debitis?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nulla laudantium magni! Repudiandae sunt illum rerum, vitae voluptatibus fugiat eum molestias hic recusandae error aperiam consequatur eveniet id? Vitae, incidunt.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste provident eligendi officiis voluptatem architecto officia velit porro rem dolore illum commodi perspiciatis earum aut voluptas modi expedita qui, odit nam!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cum iste odit est similique id. Dignissimos, nisi laudantium odio asperiores at consequatur nesciunt esse deleniti totam excepturi, voluptate a! Possimus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque perspiciatis blanditiis exercitationem illum, atque harum illo modi commodi vel suscipit incidunt deserunt eum voluptatem et ea sequi quia voluptates laudantium?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, praesentium quidem consequuntur reprehenderit eum atque quos soluta laborum ea non accusantium facere accusamus aut nam dignissimos vitae maiores, nisi debitis?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nulla laudantium magni! Repudiandae sunt illum rerum, vitae voluptatibus fugiat eum molestias hic recusandae error aperiam consequatur eveniet id? Vitae, incidunt.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste provident eligendi officiis voluptatem architecto officia velit porro rem dolore illum commodi perspiciatis earum aut voluptas modi expedita qui, odit nam!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cum iste odit est similique id. Dignissimos, nisi laudantium odio asperiores at consequatur nesciunt esse deleniti totam excepturi, voluptate a! Possimus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque perspiciatis blanditiis exercitationem illum, atque harum illo modi commodi vel suscipit incidunt deserunt eum voluptatem et ea sequi quia voluptates laudantium?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, praesentium quidem consequuntur reprehenderit eum atque quos soluta laborum ea non accusantium facere accusamus aut nam dignissimos vitae maiores, nisi debitis?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nulla laudantium magni! Repudiandae sunt illum rerum, vitae voluptatibus fugiat eum molestias hic recusandae error aperiam consequatur eveniet id? Vitae, incidunt.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste provident eligendi officiis voluptatem architecto officia velit porro rem dolore illum commodi perspiciatis earum aut voluptas modi expedita qui, odit nam!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cum iste odit est similique id. Dignissimos, nisi laudantium odio asperiores at consequatur nesciunt esse deleniti totam excepturi, voluptate a! Possimus.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque perspiciatis blanditiis exercitationem illum, atque harum illo modi commodi vel suscipit incidunt deserunt eum voluptatem et ea sequi quia voluptates laudantium?</p>
+</body>
+</html>

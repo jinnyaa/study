@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>positionEx4</title>
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <style>
+        header,footer{background-color: antiquewhite;
+        height: 100px;}
+        .contents{
+            background-color: cadetblue;
+            display: flex;
+        }
+        .contents article{
+            background-color: rgb(148, 148, 255);
+            width: 70%;
+            height: 300vh;
+        }
+        .contents aside{
+            background-color: #ddd;
+            width: 30%;
+            height: 100px;
+
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>positionEx4</h1>
+        <h2>header</h2>
+    </header>
+    <div class="contents">
+        <article>
+            <h2>main contents</h2>
+        </article>
+        <aside>
+            <h2>sticky sidebar</h2>
+        </aside>
+    </div>
+    <footer>
+        <h2>footer</h2>
+    </footer>
+</body>
+</html>
