@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* reset */
+@import url('../assets/styles/reset.css');
+
+/* font */
+@import url('../assets/styles/SpoqaHanSans.css');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* common/global */
+body{
+    line-height: 1.6;
+    text-align: center;
+    font-family: 'SpoqaHanSans',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI','맑은 고딕',돋움, sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+/* article */
+article{
+    font-weight: 700;
+    font-size: 4rem;
+    height: 300vh;
+    margin-top: 300px;
+}
+
+/* header */
+.wrapper{
+    background-color: #FA7070;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+}
+.wrapper header{
+    min-width: 700px; max-width: 1180px;
+    height: 110px;
+    margin: 0 auto;
+
+    position: relative; /*현재 요소의 흐름에 영향을 주지 않고 자식 포지션의 기준이 됨*/
+}
+.wrapper header h1{
+    font-weight: 700;
+    width: 120px; height: 60px;
+    line-height: 60px;
+    background-color: #FEFDED;
+    font-size: 1.5rem;
+
+    position: absolute;
+    left: 0; bottom: 14px;
+}
+.wrapper header .user-menu{
+    font-weight: 300;
+    font-size: 0.9rem;
+    background-color: #C6EBC5;
+    display: flex;
+    padding: 6px 10px ;
+
+    position: absolute;
+    right: 0; top: 0;
+}
+.wrapper header .user-menu li{
+    position: relative;
+    padding: 0 6px;
+}
+.wrapper header .user-menu li:first-child{
+    padding-right: 8px;
+}
+.wrapper header .user-menu li:first-child::after{
+    content: "";
+    background-color: #000;
+    width: 2px; height: 16px;
+    position: absolute;
+    top: 0; bottom: 0;
+    margin: auto;
+    right: 0;
+}
+.wrapper header .user-menu li a:hover{
+    color: #FA7070;
+}
+
+/* 메뉴 */
+.wrapper header .gnb{
+    font-family: 'Playfair Display',Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight:700;
+    display: flex;
+    position: absolute;
+    bottom: 14px; right: 0;
+    width: 520px;
+    background-color: #F1EF99;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrapper header .gnb li{
+    flex-grow: 1;
+    /* width: 25%; */
+}
+.wrapper header .gnb li a{
+    display: block;
+    line-height: 54px;
+    height: 54px;
+}
+.wrapper header .gnb li a:hover{
+    background-color: #FF8E8F;
+}

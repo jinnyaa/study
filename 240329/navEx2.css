@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+body{
+    font-family: 'SpoqaHanSans',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI','맑은 고딕',돋움, sans-serif;
+    font-weight: 300;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+main{
+    height: 300vh;
+    font-weight: 700;
+    font-size: 4rem;
+    margin-top: 300px;
+}
+h1{
+    background-color: #496989;
+    color: #fff;
+    height: 100px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 대메뉴 */
+.main-menu{
+    position: sticky;
+    top: 0;
+    background-color: cadetblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+    height: 50px;
+}
+.main-menu li{
+    width: 120px;
+    /* flex-grow: 1; */
+}
+.main-menu li a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px solid #fff;
+    
+}
+.main-menu li:last-child a{border-right: none;}
+.main-menu > li > a:hover{
+    background-color: rgb(255, 255, 255);
+    color: cadetblue;
+}
+.main-menu > li ul{}
+
+
+/* 각각의 소메뉴 */
+.main-menu li .sub-menu{display: none;}
