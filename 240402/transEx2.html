@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>transEx2</title>
+    <style>
+        .menu-icon{
+            width: 50px; height: 50px;
+            background-color: #ffffff;
+
+            position: fixed;
+            top: 30px; right: 30px;
+            color: inherit;
+            text-decoration: none;
+        }
+        .menu-icon .btn-close{
+            transition: 1s;
+            display: block;
+            height: 100%;
+            position: relative;
+
+            /* 닫기 문구 화면밖으로 내보내 안보이게끔 만듦 */
+            text-indent: -9999px;
+        }
+        .menu-icon .btn-close::before,
+        .menu-icon .btn-close::after{
+            content:"";
+            background-color: orange;
+            width:10px; height:40px;
+            border-radius: 10px;
+            position: absolute;
+
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        .menu-icon .btn-close::after{
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+        .menu-icon:hover .btn-close{
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>transEx2</h1>
+    <a href="#" class="menu-icon">
+        <span class="btn-close">
+            닫기</span>
+    </a>
+</body>
+</html>
