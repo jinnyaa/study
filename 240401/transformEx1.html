@@ -6,7 +6,8 @@
     <style>
         .container{
             border: 2px solid black;
-            height: 230px;
+            margin: 0 auto;
+            width: 95vw;
         }
         .item{
             background-color: antiquewhite;
@@ -16,17 +17,29 @@
             margin: 10px;
             text-align: center;
             line-height: 100px;
+            transition: 1s linear;
+
+            /* 포지션으로 위치 이동을 하려면 시작값이 필요
+            position: relative;
+            left: 0; */
+        }
+
+        /* 움직이는 방법 3가지 */
+        .container:hover .item{
+            /* transform: translateX(500px); */
+            /* margin-left: 500px; */
+            /* position: relative; left: 500px;  */
+
+            transform: translateX(calc(95vw - 120px)) rotate(1080deg);
+        }
+
+        .container .item:nth-child(1){
+            background-color: #BC7FCD;
 
         }
-        
-
-        .container:hover .item:nth-child(1){
-            transform: translateX(80vw) rotate(720deg);
-            transition: all 0.5s;
-        }
-        .container:hover .item:nth-child(2){
-            transform: translateX(500px) rotate(720deg);
-            transition: all 0.5s 0.5s;
+        .container .item:nth-child(2){
+            background-color: #FFCDEA;
+            transition-delay: 0.5s;
         }
  
     </style>
