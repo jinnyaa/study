@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+h1{text-align: center; margin: 50px;}
+.products{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    border: 3px solid #000;
+    display: flex;
+    width: 80vw;
+    max-width: 1200px;
+    background-color: #000000;
+}
+
+.products .item{
+    width: calc(33.3333% - 2vw);
+    margin: 1vw;
+
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+.products .item img{
+    width: 100%;
+
+    /* 
+    인라인 문제 해결
+    display: block;
+    vertical-align: top;
+    */
+} 
+.products .item .txt-box{
+
+    background-color: #000;
+    color: white;
+    transition: 0.3s;
+    padding: 1vw;
+    aspect-ratio: 1 / 1;
+    /* display: none; */
+
+}
+.products .item:hover .txt-box{transform: translateY(-100%)}
