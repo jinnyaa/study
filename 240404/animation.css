@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+@keyframes mov1 {
+    100%{background-image: linear-gradient(#E59BE9,#8644A2);
+        margin-left: 70vw; /*레이아웃에 영향을 줌*/
+        transform: rotate(360deg);
+
+    }
+    }
+    @keyframes mov2 {
+    100%{background-image: linear-gradient(#E59BE9,#8644A2);
+        transform: rotate(360deg);
+        left: 80vw;
+    }
+    }
+    @keyframes mov3 {
+        100%{transform: translateX(80vw) rotate(360deg);}
+    }
