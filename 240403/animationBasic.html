@@ -11,10 +11,24 @@
       text-align: center;
       font-weight: bold;
 
-      animation-name: ani1;/* 애니메이션 이름. 키프레임에 부여한 이름 */
+      animation-name: ani4;/* 애니메이션 이름. 키프레임에 부여한 이름 */
       animation-duration: 2s;/* 진행시간*/
       animation-delay: 0.5s;/* 대기시간 */
-      animation-timing-function: linear 움직임 스타일 */
+      animation-timing-function: linear; /*움직임 스타일 */
+
+      animation-iteration-count: infinite; /*반복횟수. 무한*/
+      animation-iteration-count: 3; /*반복횟수.*/
+
+      /* 끝난후 위치 */
+      animation-fill-mode: backwards; /*기본값: 출발점으로 돌아옴*/
+      animation-fill-mode: forwards; /*끝난 후 도착점에 그대로 있음*/
+      
+      /* 방향 */
+      animation-direction: normal; /*기본값*/
+      animation-direction: reverse; /*역방향 to, 100% -> from, 0%*/
+      animation-direction: alternate-reverse; /*역방향 진행 후 순반향 진행, 3 > 2 > 1 > 2 > 3 */
+      animation-direction: alternate; /*순반향 진행 후 역방향 진행, 1 > 2 > 3 > 2 > 1 */
+      
     }
 
     /* 애니메이션을 적용시키기 위해 미리 만들어 놓은 움직임. 작성 위치는 상관없음 */
@@ -28,6 +42,34 @@
             height: 600px;
             background-color: #fff;
         }
+    }
+    @keyframes ani2 {
+      0%{
+        width: 200px;
+        height: 200px;
+      }
+      100%{
+        transform: scale(2);
+        background-color: orange;
+      }
+    }
+    @keyframes ani3 {
+      100%{
+        transform: scale(1.5) translateX(50vw) rotate(360deg);
+        background-color: red;
+      }
+    }
+    @keyframes ani4 {
+      10%, 70%{
+        background-color: aqua;
+      }
+      50%{
+        background-color: antiquewhite;
+        transform: rotate(180deg);
+      }
+      100%{
+        transform: rotate(-180deg);
+      }
     }
   </style>
 </head>
