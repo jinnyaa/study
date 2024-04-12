@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* mq_t.css */
+/* 768px */
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+  h1 {
+    background-color: #5356FF;
+    padding: 40px;
+  }
+  h1 strong {
+    display: inline;
+  }
+  h2 {
+    background-color: #EE4266;
+  }
+  .container {
+    width: 70vw;
+    margin: 0 auto;
+  }
+}
