@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>gridEx2</title>
+  <style>
+    body { font-weight: bold; font-size: 1.2rem; }
+    .wrapper { width: 80%; height:50vh; margin: 50px auto; border: 6px solid #000; 
+      display: grid;
+      grid-auto-rows: 100px 1fr 50px;
+    }
+    header { background-color: #007F73; }
+    .contents { background-color: #4CCD99; }
+    footer { background-color: #FFC700; }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>header-고정</header>
+    <div class="contents">contents-가변</div>
+    <footer>footer-고정</footer>
+  </div>
+</body>
+</html>
