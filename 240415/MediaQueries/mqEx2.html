@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>mqEx2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+    <style>
+         body{margin: 0 auto; font-size: 2rem; text-align: center; font-weight: bold;}
+        .wrapper{
+            display: grid;
+            grid-auto-rows: 50vh 20vh 20vh; /*값이 반복*/
+            /* grid-template-rows: 50vh 20vh 20vh; 순차적으로 적용되며 나머지는 기본값으로 적용*/ 
+        }
+        .wrapper .box1{background-color: #1679AB;}
+        .wrapper .box2{background-color: #5DEBD7;}
+        .wrapper .box3{background-color: #C5FF95;}
+        /* .wrapper .box4{background-color: #074173;} */
+
+        @media (min-width:768px) {
+            .wrapper{
+                grid-template: 25vh 25vh / 1fr 2fr;
+            }
+            .box1{
+                grid-row: span 2;
+            }
+        }
+        
+        @media (min-width:1200px) {
+            .wrapper{
+                width: 80vw;
+                margin: 0 auto;
+            }
+            .box1{order: 2;}
+            .box2{order: 3;}
+            .box3{order: 1;}
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box box1">item1</div>
+        <div class="box box2">item2</div>
+        <div class="box box3">item3</div>
+        <!-- <div class="box box4">item4</div> -->
+    </div>
+</body>
+</html>

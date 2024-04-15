@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* font-family: "Barlow Condensed", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&display=swap');
+
+body {
+  font-family: "Barlow Condensed", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 500;
+  font-size: 2ch;
+  text-transform: capitalize;
+  background: url(../images/fantasy-6403406_1920.jpg) no-repeat fixed 50% / cover;
+  color:#0f533d;
+}
+
+nav .global-menu {
+  /* display: grid; */
+  display: none;
+  /* grid-auto-rows: 40px; */
+}
+nav .global-menu.active {
+  display: grid;
+}
+nav a {
+  display: block;
+  border-bottom: 1px solid #c2d8cf;
+  padding: 10px;
+}
+nav .mobile-btn {
+  background:rgba(16, 44, 87,0.2) url(../images/more_vert_FILL0_wght400_GRAD0_opsz24.svg) no-repeat 98% 50% / 20px;
+}
+/* nav .mobile-btn::after {} */

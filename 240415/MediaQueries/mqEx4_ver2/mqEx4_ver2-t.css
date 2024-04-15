@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+@media (min-width:768px) {
+    nav .mobile-btn{
+        display: none;
+    }
+    nav .global-menu{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 3px solid #c2d8cf;
+    }
+    nav .global-menu li:nth-last-child(odd) a{
+        border-right: 1px solid #c2d8cf;
+    }
+    nav .global-menu li:last-child a {
+        border-bottom: none;
+    }
+}
