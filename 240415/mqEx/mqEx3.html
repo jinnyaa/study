@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>mqEx3</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        body{margin: 20px; text-align: center; font-weight: bold; font-size: 1.2rem; background-color: #ddd;}
+        .container{ margin: 0 auto;
+        width: 300px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        }
+        .box{background-color: #9dc4ee; height: 30px; line-height: 30px; margin: 2px;}
+        .box4{display: none;}
+
+        /* 768 */
+        @media screen and (min-width:768px) {
+            .container{
+                width: 500px;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+            .box10{display: none;}
+        }
+
+        /* 1200 */
+        @media screen and (min-width:1200px){
+            .container{
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+            }
+            .box10{display: block; background-color: #ff2bae;}
+        }
+
+        /* 와이드 pc */
+        @media screen and (width>=1200px){
+            .container{
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            }
+            .box4{display: block;}
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">txt1</div>
+        <div class="box box2">txt2</div>
+        <div class="box box3">txt3</div>
+        <div class="box box4">txt4</div>
+        <div class="box box5">txt5</div>
+        <div class="box box6">txt6</div>
+        <div class="box box7">txt7</div>
+        <div class="box box8">txt8</div>
+        <div class="box box9">txt9</div>
+        <div class="box box10">txt10</div>
+    </div>
+</body>
+</html>
