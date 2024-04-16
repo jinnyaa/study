@@ -1,0 +1,331 @@
+@charset "UTF-8";
+/****** header ******/
+
+header{
+    width: 100%;
+    background: #ffffff;
+    height: 60px;
+    position: fixed;
+    margin: 0;
+    z-index: 99999;
+}
+#logo img{
+    margin: 0 18px;
+    height: 60px;
+}
+nav .menu_btn{
+    position: absolute;
+    top: 0; right: 0;
+    margin: 20px 15px 0 0;
+}
+nav .menu.active{
+    display: grid;
+}
+nav .menu{
+    display: none;
+    width: 100vw;
+    position: absolute;
+    background-color: #fff;
+}
+nav .menu li{margin: 5px 18px; border-bottom: 1px solid #ddd;}
+
+/****** main ******/
+
+/* <section class="top"> */
+section .main_top{
+    height: 900px;
+    background-color: #e5e5e5;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 150px;
+    background: url(./assets/images/hero-bg.png) 50%;    
+}
+section .main_top p{
+    text-align: center;
+    font: 17px "Noto Sans KR", sans-serif;
+    letter-spacing: 6px;
+    color: #9a9a9a;
+}
+section .main_top h2{
+    font: calc(1.6+5vw) 'Montserrat',sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    margin: 40px;
+}
+section .bg_img{
+    display: flex;
+    justify-content: center;
+    scale: 40%;
+    transform: translateY(-500px);
+}
+section ul{
+    width: calc(100% - 30px);
+    position: absolute; display: flex; 
+    justify-content: space-between; 
+    margin: 0 15px;}
+
+/* <section class="txt-block"> */
+.txtbox{padding: 20px 40px;}
+section .container{
+    max-width: 780px;
+    text-align: center;
+}
+section .container h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: left;
+}
+section .container p{
+    padding: 0; margin: 0;
+    line-height: 2;
+    text-align: left;
+    
+}
+
+.txtbox{border-bottom: 1px solid #ddd;}
+section .container .txtbox:last-child{border-bottom: none;}
+
+/* <section class="portfolio "> */
+section .portfolio_img{
+    width: 100%;
+    position: relative;
+}
+
+section .portfolio_img img{
+    width: 100%;
+}
+
+section .portfolio_img p{
+    width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.63);
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 99;
+    font-weight: bold;
+    font-size: 2rem;
+    display: none;
+}
+
+section .portfolio_img:hover p{display: grid; place-items:center; }
+
+
+/* <section class="ourbusiness"> */
+section .ourbusiness_title{
+    margin: 20px auto 0;
+    padding: 30px;
+    max-width: 780px;
+    text-align: center;
+}
+section .ourbusiness_title h3{
+    margin: 20px 0;
+    font-size: 1.5rem;
+
+}
+section .ourbusiness_title p{
+    line-height: 2;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+section .ourbusinessblock{
+    text-align: center;
+}
+section .ourbusinessblock img{
+    width: 80%;
+}
+.ourbusiness_txtbox p{
+    margin: 0 auto;
+    line-height: 2;
+    padding-bottom: 25px;
+    width: 70%;
+    text-align: center;
+
+}
+.ourbusiness_txtbox h5{
+    margin-top: 20px;
+}
+
+
+/* <section class="ouryoutube"> */
+.ouryoutube{
+    background: #f7f7f7f3;
+    padding: 30px;
+}
+
+.ouryoutube_title h3{
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+.ouryoutube_title p{
+    margin: 0 auto;
+    line-height: 1.3;
+    padding-bottom: 50px;
+    color: rgb(126, 126, 126)
+}
+section iframe{
+    width: 100%;
+}
+
+/* ourservice */
+.ourservice{
+    text-align: center;
+    margin: 0 auto;
+    
+}
+
+.ourservice_imgs{
+    box-shadow: 0px 30px 37px -23px rgba(197, 197, 197, 0.356);
+    padding-bottom: 40px;
+}
+
+
+.ourservice h3{
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+.ourservice h5, p{
+   text-align: left;
+   margin: 0 50px;
+   line-height: 2;
+}
+
+.ourservice img{
+    width: 90%;
+    margin-bottom: 20px;
+}
+.ourservice_imgs:nth-child(2){display: none;}
+.ourservice_imgs:nth-child(3){display: none;}
+.ourservice_imgs:nth-child(4){display: none;}
+
+/* <section class="location"> */
+.location{
+    text-align: center;
+    margin: 40px 0;
+    font-size: 1.5rem;
+}
+.location_nav{
+    margin: 30px auto 0;
+    width: 80%;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* location */
+.location .location-kakao #map {
+    width: 85%;
+    margin: 50px auto;
+    aspect-ratio: 1;
+}
+
+.location .adress{
+    display: block;
+    position: relative;
+    width: 85%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.location .adress span{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.location .adress li{
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0
+}
+.location .adress li:last-child{
+    border-bottom: 1px solid black;
+}
+
+
+
+
+/*  <section class="contactus"> */
+
+section.contactus{
+    width: 100%; height: 40vh;
+    background: url(./assets/images/img-bg.jpg) 30% fixed;
+    text-align: center;
+}
+.contactus .bg_box{
+    background: rgba(30, 203, 255, 0.349);
+    height: 40vh;
+}
+.contactus h3{
+    font-size: 2.5rem;
+    color: #fff;
+    padding: 30px 0 10px;
+}
+.contactus p{
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    font-weight: lighter;
+    line-height: 1.5;
+}
+.contactus .contactus_btn{
+    border: 2px solid #fff;
+    border-radius: 5px;
+    width: 40%;
+    margin: 30px auto;
+    padding: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contactus .contactus_btn:hover{
+    background-color: #ffffff;
+    color: #000;
+}
+
+/****** footer ******/
+footer{
+    background-color:#f0f0f0;
+    margin-bottom: 0;
+}
+footer .footerlogo{
+    margin: 60px 15px;
+}
+footer .info{
+    margin: 20px 15px;
+}
+footer .info h4{
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+footer .info p{
+    margin-left: 0px;
+    line-height: 20px;
+    color: #424242;
+}
+footer .info3 .icon {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+footer .copyrights{
+    background-color: #e9e9e9;
+    width: 100%; height: 20vh;
+    font-size: 0.8rem;
+    padding: 30px;
+}
+footer .copyrights p{
+    text-align: center;
+    line-height: 40px;
+}
