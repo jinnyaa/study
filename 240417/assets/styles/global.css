@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+body {
+    font-family: 'Pretendard','Notosans',-apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+  }

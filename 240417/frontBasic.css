@@ -1,0 +1,419 @@
+@charset "UTF-8";
+
+
+/****** header ******/
+header{
+    height: 80px;
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+
+}
+
+header #logo img{
+    margin: 0;
+    width: 30%;
+    position: absolute;
+    top: 50%; left: 2%;
+    transform: translate(2%, -50%);
+}
+
+header nav .menu_btn{
+    height: 30px;
+    position: absolute;
+    top: 50%; right: 5%;
+    transform: translate(5%, -50%);
+}
+header nav .menu.active{
+    display: grid;
+}
+header nav .menu{
+    display: none;
+    width: 100vw;
+    position: absolute;
+    background-color: #fff;
+    margin: 60px 0
+}
+header nav .menu li{margin: 5px 18px; border-bottom: 1px solid #ddd;}
+
+header .lang{
+    color: #fff;
+    position: absolute;
+    top: 35%; right: 15%;
+    
+}
+
+/****** section top ******/
+section .fixed_btn{
+    position: sticky;
+    top: 90%; 
+    margin-left: 85%;}
+
+    section .main_top{
+    width: 100%;
+    height: 900px;
+    background: url(./assets/images/bg_1.png) no-repeat 50%;
+    background-size: cover;
+}
+section .main_logo img{
+    width: 50%;
+    margin-top: 300px;
+    position: relative;
+}
+section .main_top p{
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: 100;
+    font-size: 0.8rem;
+}
+
+section .arrow{
+    display: flex; 
+    justify-content: space-between; 
+    margin: 0;    
+    transform: translatey(-150px);
+}
+
+section .arrow li:first-child{background-color: rgb(255, 51, 51,0.5);
+padding: 15px;
+border-radius: 0 10px 10px 0 ;}
+section .arrow li:last-child{background-color: rgb(255, 51, 51,0.5);
+    padding: 15px;
+    border-radius: 10px 0 0 10px ;}
+
+section .contactus_btn{
+    transform: translateY(80px);
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #fff;
+    margin: 0 auto;
+    background-color: rgb(255, 51, 51,0.6);
+    box-shadow: 0px 3px 10px 0.5px #311a1a
+
+}
+
+section .contactus_btn a{
+    display: block;
+}
+/****** section portfolio ******/
+
+section .portfolio{
+    background-color: #000;
+    margin: 0 auto;
+}
+
+section .client{
+    padding-top: 80px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+}
+
+
+section .client_1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+}
+section .client_2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 20px;
+
+}
+section .client_3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+
+}
+section .client_4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 10px;
+
+}
+
+section .portfolio_txt{
+    color: #FF3333;
+}
+
+section fieldset{
+    width: 70%;
+    font-size: 3rem;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px auto;
+    border-color: rgb(255, 51, 51,0.8)
+}
+
+section fieldset legend{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+section .portfolio_btn{
+    display: flex;
+    justify-content: center;
+}
+section .고객사더보기, .성공사례더보기{
+    color: #fff;
+    font-size: 1rem;
+    background-color: rgb(255, 51, 51,0.6);
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 50px 30px 100px;
+}
+
+/***** section solution *****/
+
+section .solution h2{
+    margin: 50px 0;
+    font-size: 1.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: #FF3333;
+    text-decoration-thickness: 2px;
+    
+}
+
+.solution_block{
+    display: flex;
+    justify-content: center;
+}
+
+.solution_block img{
+    width: 100%;
+    padding: 0 10px;
+}
+.dot{display: flex; width: 10%; margin: 30px auto;}
+.dot_1, .dot_2, .dot_3{width: 8px; height: 8px; background-color: #727272;
+border-radius: 50%;
+margin: 10px auto;}
+.dot_2{background-color: #FF3333;}
+
+.solution_txt{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.solution_btn{
+    color: #fff;
+    font-size: 1rem;
+    background-color: rgb(255, 51, 51);
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 50px auto
+}
+
+/***** section globaloffice *****/
+.globaloffice{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.globaloffice h2{
+    font-size: 1.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: #FF3333;
+    text-decoration-thickness: 2px;
+}
+
+.globaloffice_img img{
+    width: 90%;
+    margin-top: 100px;
+}
+
+/***** section translationfields *****/
+.translationfields{
+    background-color: #000;
+    color: #fff;
+    padding: 100px 50px 0px 50px;
+}
+
+.translationfields h2{
+    font-size: 1.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: #FF3333;
+    text-decoration-thickness: 3px;
+    margin-top: 50px;
+
+}
+
+.translationfields_icon{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 100px;
+}
+
+.translationfields_icon h5{
+    font-size: 0.5rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.translationfields_icon .grid{
+    margin: 50px 0;
+
+}
+
+
+/***** section supported *****/
+
+.supported{
+    background-color: #000;
+    color: #fff;
+}
+.supported_title{
+    font-size: 1.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: #FF3333;
+    text-decoration-thickness: 3px;
+    margin-bottom: 100px;
+    padding-top: 200px;
+}
+
+.supported_block{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+
+}
+.langbox{
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px 0;
+}
+.supported_block h3{
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        color: #7C7C7C;
+}
+.supported_block h2{
+    font-size: 1.5rem;
+}
+
+
+
+/***** section process *****/
+.process{
+    background-color: #000;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    padding-bottom: 100px;
+}
+section .process h2{
+    font-size: 1.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: #FF3333;
+    text-decoration-thickness: 3px;
+    padding: 200px 0 50px 0;
+}
+
+.processbox{
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    border: 2px solid #FF3333;
+    border-radius: 10px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.processbox h1, .processbox p{
+    padding: 10px;
+}
+.processbox p{color: #898989;
+font-size: 0.8rem;
+font-weight: 200;}
+
+
+/***** section community *****/
+section .community{
+    background-color: #000;
+    color: #fff;
+    padding-bottom: 100px;
+}
+
+section .community h2{
+    font-size: 1.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: #FF3333;
+    text-decoration-thickness: 3px;
+    padding: 100px 0;
+}
+.commuimg{position: relative;}
+.commuimg img{width: 100%;}
+.commuimg p{position: absolute;
+bottom: 0; right:0; z-index: 9999;
+font-size: 1.2rem;
+margin: 20px;
+}
+
+/***** section contactus *****/
+.bottom_contactus{
+    background-color: #000;
+    color: #fff;
+}
+
+.bottom_txt h2{
+    font-size: 1.2rem;
+    text-decoration-line: underline;
+    text-decoration-color: #FF3333;
+    text-decoration-thickness: 3px;
+    padding: 100px 0 20px 0;
+}
+
+.bottom_contactus form{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(6);
+}
+
+.bottom_contactus form input, .bottom_contactus form select {
+padding: 10px;
+margin-bottom: 10px;
+}
+
+.sudmit{
+    width: 30%;
+    margin:20px auto;
+    background-color: rgb(255, 51, 51,0.6);
+    border-radius: 5px;
+}
+
+
+footer{
+    background: #212529;
+    color: #fff;
+    font-weight: 100;
+    font-size: 0.5rem;
+}
+footer h5{font-size: 0.8rem;
+padding: 20px; font-weight: 100;}
+.계열사{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+
+.footer_info{
+    display: flex;
+    justify-content: center;
+    padding:  20px 20px 100px 20px;
+}
+
+   
+
+
