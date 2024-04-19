@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@import url(../assets/styles/pretendard-subset.css);
+
+
+/* *** css 변수 *** */
+:root{
+  --font-m: 'Pretendard', -apple-system, BlinkMacSystemFont, "Helvetica Neue","Apple SD Gothic Neo", Arial, sans-serif;
+  --font-pc: 'Pretendard', -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+
+  --font-title-xlg: 2rem; 
+  --font-title-lg: 1.5rem; 
+  --font-title-md: 1.2rem; 
+  --font-title-sm: 0.8rem; 
+
+  --color-bg: #f1faff;
+
+  --color-note-1: #F3D0D7;
+  --color-note-2: #FFEC9E;
+  --color-note-3: #97E7E1;
+  --color-note-4: #D9EDBF;
+
+  --color-gray-80: #464646;
+  --color-white: #fff;
+}

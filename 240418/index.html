@@ -6,14 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
   <!-- favicon -->
   <!-- og -->
+  
   <!-- 성능 최적화를 고려한다면 link, 관리를 고려한다면 @import -->
   <link rel="stylesheet" href="../assets/styles/reset.css">
+  <!-- swiper css -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
   <!-- 공통 내용 -->
   <link rel="stylesheet" href="./common.css">
   <!-- layout: header, footer -->
   <link rel="stylesheet" href="./layout.css">
   <!-- layout: 현재페이지 -->
   <link rel="stylesheet" href="./index.css">
+
+  <!-- kakao js -->
+  <!-- swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -38,10 +45,25 @@
     </nav>
   </header>
   
+  
   <!-- contents -->
   <!-- main-slide -->
   <section class="main-slide">
-    <div class="main-swiper">main-swiper</div>
+    <!-- 슬라이드 관련 -->
+    <div class="main-swiper swiper">
+      <!-- 슬라이드 이미지 -->
+      <div class="swiper-wrapper">
+        <div class="swiper-slide main-bg1">Slide 1</div>
+        <div class="swiper-slide main-bg2">Slide 2</div>
+        <div class="swiper-slide main-bg3">Slide 3</div>
+        <div class="swiper-slide main-bg4">Slide 4</div>
+      </div>
+      <!-- 슬라이드 페이지내이션 -->
+      <div class="swiper-pagination"></div>
+      <!-- 사이드 버튼(캐러셀) -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
   </section>
 
   <!-- main-intro -->
@@ -101,7 +123,7 @@
     <div class="main-business-list margin-lg grid-container" >
       <figure>
         <img src="./images/img-01.jpg" alt="Brokerage & Trading">
-        <figcaption>
+        <figcaption> <!--오직 부모 요소인 <figure> 태그의 콘텐츠를 참조할 수 있는 캡션(설명)이나 범례을 나타내기 위해 사용하는 태그-->
           <strong>Brokerage & Trading</strong>
           This theme does everything you could possibly want it to do
         </figcaption>
@@ -130,21 +152,22 @@
     </div>
   </section>
 
-  <!-- main-youtube -->
-  <section class="main-youtube">
-    <div class="main-youtube-text margin-md">
-      <h2 class="main-title">Our Youtube</h2>
+<!-- main-youtube -->
+<section class="main-youtube">
+  <div class="main-youtube-text margin-lg flex-container">
+    <h2 class="main-youtube-title">Our Youtube</h2>
       <p class="main-youtube-des">In an ideal world this text wouldn’t exist, a client would acknowledge the importance of having web copy before the design starts. Needless to say it’s very important, content is king and people are beginning to understand that. However, back over in reality some project schedules and budgets don’t allow for web copy to be written before the design phase, this is sad but true.</p>
     </div>
-    <div class="main-youtube-video">
-      <iframe src="https://www.youtube.com/embed/fatYsQ__LW4?si=jbflB8Z2vqA_RSW0&amp;controls=0&mute=1&loop=1&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="main-youtube-video margin-lg">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/TboWOSW7qCI?si=uWJZo7XE9wEF3L1D&amp;controls=0&mute=1&loop=1&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
     </div>
   </section>
 
   <!-- main-service -->
   <section class="main-service">
     <h2 class="main-title">Our Service</h2>
-    <ul class="main-service-gallery">
+    <ul class="main-service-gallery margin-md flex-container" >
       <li>
         <a href="#"><img src="./images/img-05.jpg" alt="branding"></a>
         <div class="service-gallery-text">
@@ -187,7 +210,7 @@
   <section class="main-location">
     <h2 class="main-title">Location</h2>
     <ul class="location-menu margin-lg">
-      <li class="location-office">
+      <li class="location-office active">
         <h3>office</h3>
         <div class="location-map tab-box">
           <div class="kakao-map">카카오 지도</div>
@@ -211,7 +234,7 @@
 
   <!-- main-talk -->
   <section class="main-talk">
-    <div class="color-layer">
+    <div class="color-layer grid-container">
       <h2 class="main-talk-title">Let's talk</h2>
       <p>Herb multiply also earth one you’ll a wherein form creature be.
         Unto land open creature give their midst together, fruit good thing multiply fill it.</p>
@@ -221,7 +244,7 @@
 
   <!-- footer -->
   <footer class="footer padding-sm">
-    <section class="footer-info">
+    <section class="footer-info grid-container" >
       <h2 class="footer-logo">로고</h2>
       <div class="footer-info-list">
         <h3>CONTACT</h3>
@@ -233,7 +256,7 @@
       </div>
       <div class="footer-info-list">
         <h3>SOCIAL</h3>
-        <ul>
+        <ul class="social-list flex-container">
           <li><a href="#">
             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
         </a></li>
@@ -249,7 +272,7 @@
     </section>
     <div class="footer-copyright">
       <p>Copyrights &copy; 2020 All Rights Reserved by DYAMI.</p>
-      <ul class="footer-policy">
+      <ul class="footer-policy flex-container">
         <li><a href="#">Terms of Use</a></li>
         <li><a href="#">Privacy Policy</a></li>
       </ul>
@@ -259,5 +282,28 @@
 
   <!-- 위로 go-to-top -->
   <a href="#" class="go-to-top">위로</a>
+
+
+
+  <script>
+    // https://swiperjs.com/get-started
+
+    const swiper = new Swiper('.swiper', {
+      loop: true,// 반복
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      autoplay:{
+        delay:2500,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+  
 </body>
 </html>

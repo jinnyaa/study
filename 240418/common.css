@@ -32,9 +32,9 @@
   --color-gray-80: #464646;
   --color-white: #fff;
 
-  --bgcolor-light-gray:;
-  --bgcolor-dark-gray:;
-  --bgcolor-highlight:;
+  /* swiper */
+  --swiper-navigation-size : 30px;
+  --swiper-theme-color: maroon;
 }
 
 /* *** Global Style *** */
@@ -61,7 +61,7 @@ html {
   background-color: var(--color-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-gray-10);
+  background-color: var(--color-gray-20);
   box-shadow: 0 1px 10px var(--color-gray-80);
 }
 
@@ -83,36 +83,59 @@ body {
   display: grid;
 }
 
-
-.margin-md {margin:0 26px}
-.margin-lg {margin: 0 38px;}
-.padding-sm {padding: 0 14px;}
-.padding-md {}
-
-
 .main-title {
   font-family: var(--font-m-en);
   font-size: var(--font-title-xlg);
-  margin-top: 50px;
+  margin-top:50px;
   text-align: center;
-  color: #000;
+  color:#000;
 }
 .main-title::after {
-  content: "";
+  content:"";
   width: 50px; height: 2px;
   display: block;
   background-color: #000;
   margin: 20px auto;
 }
 .main-des {
-text-align: center;
-line-height: 1.7;
-width: 70%;
-margin: 25px auto;
+  text-align: center;
+  line-height: 1.7;
+  width: 70%;
+  margin: 25px auto;
+}
 
+.margin-md {
+  margin: 0 26px;
+}
+.margin-lg {
+  margin: 0 38px;
+}
+.padding-sm {
+  padding: 0 14px;
 }
 
 /* 980이상일 때 */
 @media (min-width: 960px) {
+  :root {
+    --font-title-xlg: 3rem;
+    --font-title-lg: 2.5rem; 
+    --font-title-md: 1.7rem; 
+    --font-title-sm: 1.5rem; 
 
+    /* swiper */
+    --swiper-navigation-size : 50px;
+  }
+  .main-title {
+    margin-top: 100px;
+  }
+  .main-des {
+    width: 40%;
+  }
+
+  html {
+    font-size: 18px;
+  }
+  .padding-sm {
+    padding: 0 33px;
+  }
 }

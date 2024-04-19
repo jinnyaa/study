@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.calendar_container .timeline_wrapper{
+    display: none;
+}
+
+.day_wrapper{
+    width: 100%;
+    background-color: var(--color-bg);
+    padding: 20px;
+    margin: 20px 0;
+    font-family: var(--font-m);
+    display: grid;
+    grid-template-rows: repeat(11,1fr);
+}
+
+/* title */
+.title{
+    display: flex;
+}
+
+.title .day_wrapper_day, .day_wrapper_dayweek{
+    font-size: var(--font-title-xlg);
+    margin-right: 20px;
+}
+
+
+/* day_wrapper_box */
+.day_wrapper_box .note_1{
+    background-color: var(  --color-note-1);
+    grid-row: 3/4;
+}
+
