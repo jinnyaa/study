@@ -1,0 +1,18 @@
+<body>
+    <h1>함수스코프</h1>
+    <script>
+      function parents() {// 부모함수 (전역 함수)
+        let a = 100, b = 300;
+  
+        function child() {// 내부(자식)함수 (지역 함수)
+          let b = 500;
+          console.log(a);
+          console.log(b);
+        }
+        
+        console.log(a, b);
+      }
+  
+      parents();
+    </script>
+  </body>
