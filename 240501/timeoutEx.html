@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 게임</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            background-color: #F6F6F6;
+        }
+        h1 {
+            margin: 0;
+            background-color: #D5B4B4; color: #fff;
+            height: 4rem; line-height: 4rem;
+            margin-bottom: 30px;
+        }
+        #problem {
+            margin:0 auto 10px;
+            border: #965454 solid 2px;
+            width: 20%; height: 2rem; line-height: 2rem;
+            border-radius: 10px;
+            font-weight: bold; 
+            background-color: #F5EBEB; color: #423939;
+        }
+        #timer {
+            font-weight: 600;
+        }
+        #countdown {
+            font-size: 1.5rem
+        }
+        #userAnswers {
+            margin-top: 20px;
+        }
+        #userAnswers p {
+            color: green;
+        }
+        .box{
+            border: 2px solid #000;
+            width: 70%;
+            margin: 0 auto;
+            text-align: left;
+            word-break: keep-all;
+        }
+        .box p{ text-align: center; font-weight: bold; font-size: 1.2rem;}
+    </style>
+</head>
+<body>
+    <h1>⏱️구구단을 외자⏱️</h1>
+    <div id="problem"></div>
+    <input type="text" id="answer" placeholder="정답을 입력하세요">
+    <button onclick="checkAnswer()">제출</button>
+    <p id="result"></p>
+    <div id="userAnswers"></div> <!-- 사용자의 답을 보여줄 div -->
+    <p id="timer">남은 시간: <span id="countdown">30</span>초</p>
+        
+
+    </ol>
+    </div>
+
+    <script>
+        let currentQuestion = 0; // 현재 문제 번호
+        let correctAnswers = 0; // 정답 수
+        const questions = generateQuestions(); // 문제 생성
+        let timer = 30; // 타이머 초기 값 (30초)
+        let timerId = null; // 타이머 ID 저장 변수
+        const countdownElement = document.getElementById('countdown'); // 타이머 표시 엘리먼트
+        const resultElement = document.getElementById('result'); // 결과 메시지 엘리먼트
+
+        // 문제를 랜덤하게 생성하는 함수
+        function generateQuestions() {
+            const questions = [];
+            for (let i = 0; i < 5; i++) {
+                const num1 = Math.floor(Math.random() * 9) + 1;
+                const num2 = Math.floor(Math.random() * 9) + 1;
+                questions.push({ question: `${num1} x ${num2}`, answer: num1 * num2 });
+            }
+            return questions;
+        }
+
+        // 현재 문제를 화면에 표시하는 함수
+        function displayQuestion() {
+            document.getElementById('problem').textContent = questions[currentQuestion].question;
+        }
+
+        // 사용자가 제출 버튼을 클릭했을 때 호출되는 함수
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById('answer').value); // 사용자의 입력 값을 정수로 변환
+            const userAnswersDiv = document.getElementById('userAnswers');
+
+            // 사용자의 답을 페이지에 추가
+            userAnswersDiv.innerHTML += `<p>${questions[currentQuestion].question} = ${userAnswer}</p>`;
+
+            // 정답 확인
+            if (userAnswer === questions[currentQuestion].answer) {
+                correctAnswers++; // 정답 수 증가
+                if (currentQuestion < 4) {
+                    currentQuestion++; // 다음 문제로
+                    displayQuestion();
+                } else {
+                    endGame(true); // 모든 문제 맞힘, 게임 종료
+                }
+            } else {
+                endGame(false); // 틀림, 게임 종료
+            }
+            document.getElementById('answer').value = ''; // 입력 필드 초기화
+        }
+
+        // 타이머 업데이트 함수
+        function updateTimer() {
+            countdownElement.textContent = timer; // 타이머 표시 업데이트
+            timer--;
+            if (timer < 0) {
+                endGame(false); // 시간 초과, 게임 종료
+            } else {
+                timerId = setTimeout(updateTimer, 1000); // 1초 후에 updateTimer 다시 호출
+            } 
+        }
+
+        // 게임 종료 함수
+        function endGame(won) {
+            clearTimeout(timerId); // 타이머 중단
+            if (won) {
+                resultElement.textContent = "🎉축하합니다. 모든 문제를 맞췄습니다!🎉";
+            } else {
+                resultElement.textContent = "틀렸습니다. 게임 종료!";
+            }  
+                
+            document.getElementById('answer').disabled = true; // 입력 필드 비활성화
+        }
+
+        displayQuestion(); // 첫 번째 문제 표시
+        updateTimer(); // 타이머 시작
+    </script>
+</body>
+</html>
