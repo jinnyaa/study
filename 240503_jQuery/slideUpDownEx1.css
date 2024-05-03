@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body{margin: 0 auto; text-align: center;}
+
+header{
+    width: 100%;
+    background-color: #EEF7FF;
+    height: 50px;
+    font-size: 1.2rem;
+    line-height: 50px;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+header h1{
+    height: 50px;
+    padding: 0 20px;    
+}
+.menu{
+    display: flex;    
+}
+.menu ul{
+    font-size: 1rem;
+    background-color: #CDE8E5;
+    z-index: 9999;
+    display: none;
+    height: 250px;
+    position: relative;
+}
+
+.content{
+    background-color: #FEEFAD;
+    height: 200px;
+    line-height: 200px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    z-index: -999;
+
+}
