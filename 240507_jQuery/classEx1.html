@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>classEx1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+
+    <style>
+        .tab-menu{
+            margin: 50px auto;
+            width: 600px;
+            position: relative;
+            padding-top: 30px;
+        }
+
+
+         /* 각 영역의 제목 */
+        .title{
+            border-radius: 10px 10px 0 0;
+            background-color: #97b7d3;
+            width: 200px; height: 30px;
+            text-align: center;
+            padding: 5px;
+            cursor: pointer;
+            box-sizing: border-box;
+            color: #fff;
+            position: absolute;
+            top: 0; left: 0;
+        }
+        .tab-menu #tab-css .title{left: 200px;}
+        .tab-menu #tab-js .title{left: 400px;}
+
+        .tab-menu p{
+            box-sizing: border-box;
+            margin: 0;
+            background-color: #EEF7FF;
+            padding: 30px;
+            display: none;
+        }
+
+        .tab-menu li.active h2,
+        .tab-menu li.active p{
+            background-color: #EEF7FF;
+            display: block;
+            color: #4D869C;
+        }
+
+
+    </style>
+        
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+
+  
+</head>
+<body>
+    <ul class="tab-menu">
+        <li id="tab-hml" class="active">
+            <h2 class="title">HTML</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus sequi mollitia molestiae ipsam voluptatum? Velit neque odit dicta, excepturi reprehenderit hic maiores obcaecati vero perferendis unde iure adipisci minus molestias!</p>
+        </li>
+        <li id="tab-css" class="">
+            <h2 class="title">CSS3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus sequi mollitia molestiae ipsam voluptatum? </p>
+        </li>
+        <li id="tab-js" class="">
+            <h2 class="title">JAVASCRIPT</h2>
+            <p>Velit neque odit dicta, excepturi reprehenderit hic maiores obcaecati vero perferendis unde iure adipisci minus molestias!</p>
+        </li>
+    </ul>
+
+    <script>
+        $(function() {
+        //방법1
+        //   $('.tab-menu li:first-child').on('click', () => {
+        //     $('.tab-menu li:first-child').addClass('active');
+        //     $('.tab-menu li:nth-child(2)').removeClass('active');
+        //     $('.tab-menu li:nth-child(3)').removeClass('active');
+        //   });
+        //   $('.tab-menu li').eq(1).on('click', () => {
+        //     $('.tab-menu li').removeClass('active');
+        //     $('.tab-menu li').eq(1).addClass('active');
+        //   });
+
+        //방법2
+        // $('.tab-menu li').on('click',(e)=>{
+        //     $('.tab-menu li').removeClass('active');
+        //     $(e.target).parent().addClass('active');
+        //     --> e.target 내가 클릭한 그 요소
+        // });
+
+         //방법3
+         $('.tab-menu li').on('click',(e)=>{
+            $('.tab-menu li').removeClass('active');
+            $(e.currentTarget).addClass('active');
+            // --> e.currentTarget 내가 클릭한 이벤트  리스너가 바인딩된 그 요소
+        });
+
+
+        });
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>prependTo+appendToEx1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        .box{
+            width: 200px; height: 200px;
+            border: 2px solid #000000;
+            margin: 0 auto;
+            padding: 0;
+            overflow: hidden;
+        }
+        li{
+            width: 200px; height: 200px;
+            list-style: none;
+            text-align: center;
+            line-height: 200px;
+            font-weight: bold;
+        }
+        .item1{background-color: antiquewhite;}
+        .item2{background-color: rgb(221, 191, 151);}
+        .item3{background-color: rgb(230, 172, 97);}
+        .item4{background-color: rgb(148, 104, 46);}
+
+   
+    </style>
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>prependTo+appendToEx1</h1>
+    <ul class="box">
+        <li class="item1">item1</li>
+        <li class="item2">item2</li>
+        <li class="item3">item3</li>
+        <li class="item4">item4</li>
+    </ul>
+
+    <script>
+        //.appendTo();
+        const boxChange=()=>$('.box li').first().appendTo('.box');
+        setInterval(boxChange,3000)
+        
+    </script>
+</body>
+</html>

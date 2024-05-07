@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>한글 로렘 입숨 생성기</title>
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> ✏️한글 로렘 입숨 생성기 </h1>
+    <form id="loremForm">
+        <input type="number" id="amount">
+        <button type="button" class="create_btn">생성</button>
+        <button type="button" class="short_btn">짧게</button>
+        <button type="button" class="middle_btn">중간</button>
+        <button type="button" class="long_btn">길게</button>
+    </form>
+    <p class="result_text"></p>
+
+    <script>
+        // `words` 배열은 한글 단어들을 포함하고 있으며, 이 단어들은 로렘 입숨 텍스트 생성에 사용됩니다.
+        const words = [
+            '계절이', '지나가는', '하늘에', '가을로', '있습니다', '나는', '걱정도', '아무', '없이', '가을 속의',
+            '여름 하나', '별들을', '모두', '헤일 듯', '합니다', '가슴속에', '하나둘', '이제', '헤는 것은', '쉬이', '아침이',
+            '오는', '까닭이요', '내일', '남은', '청춘이', '아니다', '다하지', '아직', '별 하나에', '추억과', '사랑과', '쓸쓸함과',
+            '동경과', '시와', '어머니', '한마디', '이국 소녀들의', '이름과', '꽃들 속에서', '바람들과', '비둘기들', '불러봅니다',
+            '릴케의', '시선과', '북간도에', '계십니다', '별빛들', '우는 벌레는', '부끄러운', '지난 겨울에', '봄이 오면', '피어나듯이',
+            '우정의', '눈물과', '호수 속에', '한 마디의', '이듬 해', '민들레는', '지저귀는', '햇살 속에', '기울어진', '서로를',
+            '닮아', '삶 속의', '소원을', '담아', '차오르는', '달의', '하려다 만', '속의 말', '시간의', '바깥에서'
+        ];
+        
+
+        // HTML 문서에서 폼 요소를 선택하고 `form` 변수에 할당합니다.
+        const form = document.querySelector('#loremForm');
+        // 결과를 표시할 문단(p 태그) 요소를 선택하고 `resultText` 변수에 할당합니다.
+        const resultText = document.querySelector('.result_text');
+
+        // 폼에 클릭 이벤트 리스너를 추가합니다. 이벤트 리스너는 사용자가 버튼을 클릭할 때마다 호출됩니다.
+        form.addEventListener('click', function (event) {
+            // 클릭된 요소를 `target` 변수에 저장합니다.
+            let target = event.target;
+            // 클릭된 요소가 버튼인지 확인합니다.
+            if (target.tagName === 'BUTTON') {
+                //html에서 id가 'amount (입력필드 id) '인 값을 찾아서 값을 가져와야 합니다. 이 값을 정수로 변환해야 하기 때문에 parseInt()를 사용
+                // 입력 필드에서 사용자가 입력한 숫자를 읽고, 값이 없으면 0을 사용합니다.
+                let amount = parseInt(document.getElementById('amount').value) || 0;
+                //if함수 내에서 if함수 사용. 사용자가 생성 버튼을 클릭했을때로 if 시작
+                // 클릭된 버튼의 클래스에 따라 다른 기능을 실행합니다.
+                if (target.className === 'create_btn') {
+                    // 사용자가 지정한 수량의 로렘 입숨 텍스트를 생성하고 결과 텍스트로 표시합니다.
+                    //텍스트 생성 함수는 이후 아래에서 다룰 예정
+                    resultText.textContent = generateLorem(amount);
+                } else if (target.className === 'short_btn') {
+                    // 10에서 15 사이의 임의의 수량으로 짧은 로렘 입숨 텍스트를 생성하고 결과 텍스트로 표시합니다.
+                    resultText.textContent = generateLorem(randomRange(10, 15));
+                } else if (target.className === 'middle_btn') {
+                    // 25에서 30 사이의 임의의 수량으로 중간 길이의 로렘 입숨 텍스트를 생성하고 결과 텍스트로 표시합니다.
+                    resultText.textContent = generateLorem(randomRange(25, 30));
+                } else if (target.className === 'long_btn') {
+                    // 40에서 50 사이의 임의의 수량으로 긴 로렘 입숨 텍스트를 생성하고 결과 텍스트로 표시합니다.
+                    resultText.textContent = generateLorem(randomRange(40, 50));
+                }
+            }
+        });
+
+        // 주어진 수량(`amount`) 입력필드 id //만큼의 로렘 입숨 텍스트를 생성하는 함수입니다.
+        function generateLorem(amount) {
+            //result로 빈 배열을 만드는 이유: 반복에서 선택된 단어들을 임시로 저장하기 위해서입니다. 이 배열은 반복이 진행될 때마다 선택된 단어를 담고, 최종적으로 이 단어들을 하나의 문자열로 합쳐서 반환합니다. 따라서 매 호출마다 새로운 로렘 입숨 텍스트가 생성될 수 있습니다.
+            let result = [];
+            //반복문을 사용해서 "amount"만큼의 횟수동안 반복하게 됩니다. 
+            for (let i = 0; i < amount; i++) {
+                // 반복에서는 Math.random 함수를 사용해서 `words` 배열에서 임의의 단어를 선택하여, 결과 배열에 추가합니다.
+                // 0 이상의 값을 불러와야하기 때문에 words.length를 곱해서 0 이상, words.length 미만의 난수가 생성됩니다.
+                // 이를 Math.floor() 함수로 버림하여 배열의 인덱스 값으로 사용
+                // 그래서 words 배열에서 해당 인덱스의 단어를 선택하여 배열의 끝에 추가
+                result.push(words[Math.floor(Math.random() * words.length)]);
+            }
+            // 앞에서 생성한 결과 배열의 단어들을 join을 활용해 배열의 모든 요소를 공백으로 연결해서 하나의 문자열로 합치게 해 반환합니다.
+            // return을 사용해서 함수의 호출지점으로 반환합니다. (함수 호출 지점은 if함수내의 버튼 클릭시 result 실행 부분)
+            return result.join(' ');
+        }
+
+        // 짧게, 중간, 길게 버튼을 클릭했을때 각각 다른 범위의 단어들이 생성되어야 합니다.
+        // 최소값(`min`)과 최대값(`max`) 사이에서 임의의 정수를 반환하는 함수입니다.
+
+         // 먼저 Math.random()을 사용해서 0부터 1 사이의 무작위 소수를 선택합니다.
+        // 그런 다음에 (max - min + 1)을 곱해주면 우리가 원하는 범위 안의 무작위 소수가 선택됩니다.
+        // 예를 들어, 만약 min이 1이고 max가 10이면, (10 - 1 + 1) = 10이 되어서 0부터 9까지의 소수를 선택합니다.
+        // 여기서는 소수를 정수로 변환하기 위해 Math.floor() 함수를 사용합니다.
+        // 그리고 마지막으로 min을 더해서 우리가 원하는 범위의 무작위 정수를 얻을 수 있습니다. (반환할 값을 원하는 범위의 시작점으로 이동시키기 위한 것)
+        function randomRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        
+        // Math.random() 함수는 0 이상 1 미만의 난수를 생성합니다. 이 값은 0과 1 사이의 어떤 수든 될 수 있습니다.
+        // (max - min + 1)은 최대값과 최소값 사이의 범위에 1을 더한 값입니다. 여기서는 (15 - 10 + 1)이므로 6이 됩니다.
+        // 따라서 Math.random()이 생성한 난수에 (15 - 10 + 1)을 곱하면 0 이상 6 미만의 수가 됩니다.
+        // Math.floor() 함수는 소수점 이하를 버려서 난수를 0, 1, 2, 3, 4, 5 중 하나의 정수로 만듭니다.
+        // 마지막으로 이 값에 최소값인 10을 더해주면, 최소값과 최대값 사이의 범위에서의 임의의 정수를 반환합니다.
+        // 예를 들어, randomRange(10, 15)를 호출했을 때:
+
+        // Math.random()이 0.4를 생성한다고 가정합니다.
+        // 그러면 (15 - 10 + 1), 즉 6을 곱한 값은 2.4가 됩니다.
+        // Math.floor() 함수를 적용하면 2가 됩니다.
+        // 마지막으로 최소값인 10을 더하면, 반환되는 값은 10 + 2 = 12가 됩니다.
+        // 따라서 이 함수는 10 이상 15 이하의 정수 중에서 하나인 12를 반환합니다.
+
+    </script>
+</body>
+
+</html>

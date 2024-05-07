@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>toggleClass</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+    <style>
+        .box{
+            width: 50%; height: 200px;
+            background-color: #CAF4FF;
+            margin: 30px auto;
+            transition: 0.5s;
+        }
+        .btn{
+            background: #EEEEEE;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .btn:hover{background-color: #7AB2B2; color: #fff;}
+
+        .box.style{
+            background-color: #FFE6E6;
+            width: 80vw;
+        }
+    </style>
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function() {
+            $('.btn').on('click',()=>{
+                $('.box').toggleClass('style');
+        })
+        });
+    </script>
+</head>
+<body>
+    <h1>toggleClass</h1>
+    <button class="btn">Toggle</button>
+    <div class="box"></div>
+</body>
+</html>
