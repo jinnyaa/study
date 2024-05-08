@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>animateEx5</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <style>
+        .container{
+            position: relative;
+            width: 100vw; height: 80vh;
+        }
+        .img-group img{
+           position: absolute;
+           width: 100%; height: 100%;
+           z-index: 0;
+           
+        }
+        .btn-group{
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:100%; height: 100%;
+        }
+        .btn-group li{
+            font-weight: bold;
+            text-align: center;
+            width: 30px; height: 30px;
+            background-color: #ddd;
+            line-height: 30px;
+            cursor: pointer;
+            transition: 0.2s;
+            user-select: none;
+            z-index: 99999;
+        }
+
+        .img.active{
+           opacity: 0;
+           transition: 0.5s;
+        }
+
+    </style>
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+    <script src="../assets/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <ul class="btn-group">
+          <li class="pre">&lt;</li>
+          <li class="next">&gt;</li>
+
+        </ul>
+        <ul class="img-group">
+          <li><img src="https://placehold.co/600x400/EEF7FF/ddd?text=img1" alt="img1" class="img active"></li>
+          <li><img src="https://placehold.co/600x400/CDE8E5/ddd?text=img2" alt="img2" class="img "></li>
+          <li><img src="https://placehold.co/600x400/7AB2B2/ddd?text=img3" alt="img3" class="img "></li>
+          <li><img src="https://placehold.co/600x400/4D869C/ddd?text=img4" alt="img4" class="img "></li>
+        </ul>
+      </div>
+      <script>
+        $('.pre').first().on('click', () => {
+        $('.img-group li:last-child').prependTo('.img-group');
+        });
+        $('.next').last().on('click', () => {
+        $('.img-group li:first-child').appendTo('.img-group');
+        });
+
+        function movingText(num){
+                const nextIdx=(num+1) % $('.img-group .img').length;
+                $('.img-group .img').removeClass('active').eq(nextIdx).addClass('active').eq(nextIdx).addClass('active');
+                setTimeout(()=>movingText(nextIdx),2000);
+            }
+            movingText(0);
+        
+      </script>
+</body>
+</html>
