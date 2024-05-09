@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>animateEx5</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <style>
+        body{display: flex;}
+        .nav-wrapper{
+            width: 200px; height: 100vh;
+            /* background-color: #ddd; */
+            position: relative;
+        }
+        .side-menu{
+            width: 170px; height: 100%;
+            background-color: #FFF9D0;
+            text-align: center;
+            font-size: 1.2rem;
+            padding-top: 50px;
+            line-height: 2;
+        }
+        .toggle-btn{
+            position: absolute;
+            top: 50px; left: 170px;
+            font-size: 1.8rem;
+            text-align: center;
+            padding-left: 20px;
+        }
+        .content{
+            font-size: 1.5rem;
+            position: relative;
+            margin: 100px 50px;
+            width: 100%;
+        }
+    </style>
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+    <script src="../assets/jquery-ui.min.js"></script>
+</head>
+<body>
+    <nav class="nav-wrapper">
+        <a href="#" class="toggle-btn">☰</a>
+        <ul class="side-menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+    </nav>
+    <main class="content">사이드 메뉴</main>
+
+    <script>
+        $('.toggle-btn').on('click',()=>{
+            $('.nav-wrapper').animate({
+                left:$('.nav-wrapper').css('left')=== '0px'?'-170px':'0px'
+            },300);
+            $('.content').animate({
+                left:$('.nav-wrapper').css('left')=== '0px'?'-170px':'0px'
+            })
+        })
+    </script>
+</body>
+</html>
