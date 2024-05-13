@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>scrollEx3</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <style>
+        body{margin: 0;}
+        nav{height: 50px; background-color: #000; color: #fff; line-height: 50px; text-align: center;}
+        h1{ width: 100%; height: 100px; background-color: #ddd; text-align: center; position: sticky; top: 0; }
+        main{height: 400vh; text-align: center;}
+        footer{
+            height: 50px; background: #000; color: #fff;
+            line-height: 50px; text-align: center; margin: 0; padding: 50px;
+        }
+        .banner{
+            width: 200px; height: 50px;
+            background-color: skyblue;
+            margin: 0;
+            position: fixed;
+            bottom: 100px; right: -200px;
+            transition: 0.3s;
+        }
+        .banner.on{right: 0;}
+    </style>
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+    <script src="../assets/jquery-ui.min.js"></script>
+</head>
+<body>
+   <nav>내비게이션</nav>
+   <h1>scrollEx3</h1>
+   <main>원하는 위치에서 실행</main>
+   <footer>footer</footer>
+
+   <div class="banner">배너 입니다</div>
+   
+   <script>
+        $(window).on('scroll',()=>{
+            //메인 영역의 4/5를 지나면 배너 나타남
+            let mainHt=$('main').height()*0.8;
+
+            if (scrollY>mainHt) {
+                $('.banner').addClass('on');
+            } else {
+                $('.banner').removeClass('on');
+            }
+        })
+   </script>
+</body>
+</html>

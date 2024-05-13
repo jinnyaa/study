@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>scrollEx1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        html{scroll-behavior: smooth;}
+        body{ height: 300vh;}
+
+        .kevin img{
+            position: fixed;
+            bottom: 0; right: 0;
+            width: 15%;
+            margin-bottom: 20px;
+            transition: 0.4s;
+            animation: mov infinite 0.8s ease-in-out;
+            opacity: 0;
+            pointer-events: none; /*마우스 성격 제어*/
+
+        }
+        @keyframes mov {
+            0%,100%{
+                transform: translateX(5px) rotate(5deg);
+            }
+            50%{
+                transform: translateX(0) rotate(-5deg);
+            }
+        }
+       
+    </style>
+    <script src="../assets/jquery-3.7.1.min.js"></script>
+    <script src="../assets/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>TOP</h1>
+    </header>
+    <div class="kevin">
+        <a href="#"><img src="./images/1.png" alt="img1"></a>
+    </div>
+
+    <script>
+        $(window).on('scroll',(e)=>{
+            /*
+            //방법1
+            const scrollTop=$(e.target).scrollTop();
+            if (scrollTop>300) {
+                $('.kevin img').css({opacity:1, pointerEvents:'auto'})
+            } else {
+                $('.kevin img').css({opacity:0, pointerEvents:'none'})
+            }
+            */
+
+            //방법2
+            if (scrollY>300) {
+                $('.kevin img').css({opacity:1, pointerEvents:'auto'})
+            } else {
+                $('.kevin img').css({opacity:0, pointerEvents:'none'})
+            }
+        })
+
+
+        //js 방식
+        // const kevin = document.querySelector('.kevin')
+
+        //jq 방식
+        $('.kevin').on('click',(e)=>{
+            e.preventDefault();
+        //   $('html, body').animate({scrollTop:0});
+        scrollTo({
+            top:0,
+            behavior:'smooth'
+        })
+        })
+
+
+      
+      
+    </script>
+</body>
+</html>
