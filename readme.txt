@@ -1,5 +1,17 @@
 ReadMe_Study 일지
 
+<<240516_jQuery>>
+- js 프로젝트 html, css, js 코드 작업
+- resize, swiper, vegas 공부 및 예제풀이
+
+-------------------------------------------------------
+
+<<240515_jQuery>>
+- js 프로젝트 html,css 코드 작성
+- horizontalScrolling, progressbar 예제풀이
+
+-------------------------------------------------------
+
 <<240514_jQuery>>
 - js 프로젝트 html 코드 작성
 - scroll 예제 풀이
