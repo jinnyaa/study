@@ -9,6 +9,7 @@ ReadMe_Study 일지
 <<240516_jQuery>>
 - js 프로젝트 html, css, js 코드 작업
 - resize, swiper, vegas 공부 및 예제풀이
+- mac_git clone test
 
 -------------------------------------------------------
 
