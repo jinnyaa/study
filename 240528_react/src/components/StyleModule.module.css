@@ -1,0 +1,17 @@
+.wrapper {
+  border: 1px solid #000;
+  width: 70%;
+  margin: 20px;
+  padding: 20px;
+}
+.bg {
+  background-color: #fff;
+}
+.fontSize {
+  font-size: 1.2rem;
+}
+:global .container {
+  border: 3px solid maroon;
+  width: 80vw;
+  margin: 50px auto;
+}
