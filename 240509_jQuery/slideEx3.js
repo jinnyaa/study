@@ -1,29 +1,24 @@
-$(function () {
-    let current = 0;
-    const $slideItems = $('.slide-wrapper .slide-item');
+$('.menu-txt').on('click', function() {
+  // Remove active class from all menu items
+  $('.menu-txt').removeClass('active');
   
-    const simpleSlide = (idx) => {
-      if(idx >= $slideItems.length) {// 다음 버튼 클릭시 section의 수 보다 커지면 인덱스 0으로 
-        idx = 0;
-      } else if(idx < 0) {// 이전 버튼 클릭시 0보다 작아지면 인덱스가 section의 수보다 적은 값으로(== 인덱스)
-        idx = $slideItems.length - 1;
-      } 
+  // Add active class to the clicked menu item
+  $(this).addClass('active');
   
-      current = idx;
-      $slideItems.removeClass('active').eq(current).addClass('active');
-    }
+  // Determine the target section based on the clicked menu item
+  var targetClass = '';
+  if ($(this).hasClass('menuhome')) {
+      targetClass = 'home-top';
+  } else if ($(this).hasClass('menuproject')) {
+      targetClass = 'project';
+  } else if ($(this).hasClass('menucarrers')) {
+      targetClass = 'carrers';
+  } else if ($(this).hasClass('menuaboutme')) {
+      targetClass = 'aboutme';
+  }
   
-    // 다음 버튼
-    $('#nextBtn').on('click', () => {
-      simpleSlide(current + 1);
-    });
-  
-    // 이전 버튼
-    $('#prevBtn').on('click', () => {
-      simpleSlide(current - 1);
-    });
-  
-    setInterval(() => {
-      simpleSlide(current + 1)
-    }, 3000);
-  });
+  // Scroll to the target section
+  $('html, body').animate({
+      scrollTop: $('.' + targetClass).offset().top
+  }, 1000);
+});
